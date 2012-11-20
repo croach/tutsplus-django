@@ -1,5 +1,10 @@
 # Django settings for hackernews project.
 
+# These 3 lines get rid of the constant warnings that an unaware datetime object was used
+import warnings
+import exceptions
+warnings.filterwarnings("ignore", category=exceptions.RuntimeWarning, module='django.db.backends.sqlite3', lineno=50)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
