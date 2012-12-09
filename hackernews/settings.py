@@ -1,5 +1,8 @@
 # Django settings for hackernews project.
 
+import os
+PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
+
 # These 3 lines get rid of the constant warnings that an unaware datetime object was used
 import warnings
 import exceptions
@@ -108,9 +111,7 @@ ROOT_URLCONF = 'hackernews.urls'
 WSGI_APPLICATION = 'hackernews.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, 'templates'),
 )
 
 INSTALLED_APPS = (
