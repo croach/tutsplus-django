@@ -3,7 +3,7 @@ body {
     font-size: 13px;
 }
 #content {
-    width: 90%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     background-color: #F6F6EF;
@@ -34,23 +34,23 @@ body {
     color: #000000;
     text-decoration: none;
 }
-#stories p.story-title {
+p.story-title {
     margin: 0 0 1px 0;
 }
-#stories p.story-title a {
+p.story-title a {
     text-decoration: none;
 }
-#stories p.story-title a:visited {
+p.story-title a:visited {
     color: #828282;
 }
-#stories p.story-title a:link {
+p.story-title a:link {
     color: #000000;
 }
-#stories p.story-title span.domain {
+p.story-title span.domain {
     color: #828282;
     font-size: 11px;
 }
-#stories p.story-info {
+p.story-info {
     color: #828282;
     font-size: 9px;
     margin-top: 0;
