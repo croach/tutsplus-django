@@ -55,3 +55,22 @@ p.story-info {
     font-size: 9px;
     margin-top: 0;
 }
+form {
+    padding: 0 0 10px 10px;
+}
+form label {
+    width: 50px;
+    float: left;
+}
+form input[type=text] {
+    width: 200;
+}
+form input[type=submit] {
+    margin-left: 50px;
+}
+form ul.errorlist {
+    color: red;
+    list-style-type: none;
+    padding: 0;
+    margin-left: 50px;
+}
