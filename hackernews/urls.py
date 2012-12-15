@@ -5,6 +5,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', include('stories.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'', include('stories.urls')),
 )
