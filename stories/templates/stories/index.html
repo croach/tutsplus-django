@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load story_extras %}
 
+{% block head %}
+    <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/vote.js"></script>
+{% endblock head %}
 {% block content %}
 <ol>
 {% for story in stories %}
