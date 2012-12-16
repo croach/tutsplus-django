@@ -11,6 +11,9 @@ warnings.filterwarnings("ignore", category=exceptions.RuntimeWarning, module='dj
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
