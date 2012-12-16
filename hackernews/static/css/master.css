@@ -25,6 +25,9 @@ body {
     margin: 1px 0 0 1px;
     padding: 0 3px 0 3px;
 }
+#site-title {
+    margin-left: 30px;
+}
 #site-title h1 {
     font-family: Verdana;
     font-size: 13px;
@@ -33,6 +36,15 @@ body {
 #site-title a {
     color: #000000;
     text-decoration: none;
+}
+#user-info {
+    float: right;
+    margin-right: 10px;
+    padding: 3px 0 3px 0;
+}
+#user-info a {
+    text-decoration: none;
+    color: #000000;
 }
 p.story-title {
     margin: 0 0 1px 0;
@@ -54,19 +66,20 @@ p.story-info {
     color: #828282;
     font-size: 9px;
     margin-top: 0;
+    margin-left: 15px;
 }
 form {
     padding: 0 0 10px 10px;
 }
 form label {
-    width: 50px;
+    width: 100px;
     float: left;
 }
-form input[type=text] {
+form input[type=text], input[type=password] {
     width: 200;
 }
 form input[type=submit] {
-    margin-left: 50px;
+    margin-left: 100px;
 }
 form ul.errorlist {
     color: red;
