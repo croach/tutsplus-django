@@ -22,9 +22,14 @@ def top_stories(top=180, consider=1000):
 
 def index(request):
     stories = top_stories(top=30)
+    if request.user.is_authenticated():
+        liked_stories = request.user.liked_stories.filter(id__in=[story.id for story in stories])
+    else:
+        liked_stories = []
     return render(request, 'stories/index.html', {
         'stories': stories,
-        'user': request.user
+        'user': request.user,
+        'liked_stories': liked_stories
     })
 
 @login_required
