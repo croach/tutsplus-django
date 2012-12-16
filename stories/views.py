@@ -32,7 +32,9 @@ def story(request):
     if request.method == 'POST':
         form = StoryForm(request.POST)
         if form.is_valid():
-            form.save()
+            story = form.save(commit=False)
+            story.moderator = request.user
+            story.save()
             return HttpResponseRedirect('/')
     else:
         form = StoryForm()
