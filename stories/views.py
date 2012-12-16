@@ -22,7 +22,10 @@ def top_stories(top=180, consider=1000):
 
 def index(request):
     stories = top_stories(top=30)
-    return render(request, 'stories/index.html', {'stories': stories})
+    return render(request, 'stories/index.html', {
+        'stories': stories,
+        'user': request.user
+    })
 
 @login_required
 def story(request):
