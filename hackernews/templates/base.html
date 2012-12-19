@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load url from future %}
 
 <html>
 <head>
@@ -12,9 +13,9 @@
         <div id="header">
             <div id="site-logo">N</div>
             {% if user.is_authenticated %}
-                <div id="user-info">{{ user.username }} | <a href="/story/">submit</a> | <a href="/logout/">logout</a></div>
+                <div id="user-info">{{ user.username }} | <a href="{% url 'story' %}">submit</a> | <a href="{% url 'logout' %}">logout</a></div>
             {% else %}
-                <div id="user-info"><a href="/login/">login</a></div>
+                <div id="user-info"><a href="{% url 'login' %}">login</a></div>
             {% endif %}
             <div id="site-title"><h1>Tuts+ News</h1></div>
         </div>
