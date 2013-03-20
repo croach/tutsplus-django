@@ -6,6 +6,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hackernews.settings')
 
 import sys
 import json
+import urllib2
 
 from datetime import datetime, timedelta
 
@@ -14,7 +15,6 @@ from django.contrib.auth.models import User
 
 from stories.models import Story
 
-import requests
 
 # This script made possible with the help of the Unofficial Hacker News API
 # provided by Ronnie Roller (http://ronnieroller.com)
@@ -53,17 +53,21 @@ def created_at(item):
 def main():
     # Attempt to retrieve and process the data from the Unoffical Hacker News API
     for i in range(RETRY_ATTEMPTS + 1):
-        response = requests.get(HACKER_NEWS_API_URL)
+        try:
+            response = urllib2.urlopen(HACKER_NEWS_API_URL)
+            status_code = response.code
+        except urllib2.HTTPError, e:
+            status_code = e.code
 
         # If the service errored, hit it again
-        if response.status_code != 200:
+        if status_code != 200:
             if i <= RETRY_ATTEMPTS:
-                print("An error occured while retrieving the data, retrying (%d)..." % i+1, file=sys.stderr)
+                print("An error occured while retrieving the data, retrying (%d)..." % (i+1), file=sys.stderr)
             continue
 
         # If everything went ok, try to load the data
         try:
-            items = json.loads(response.content)['items']
+            items = json.load(response)['items']
             break
         except ValueError, e:
             if i <= RETRY_ATTEMPTS:
