@@ -13,7 +13,7 @@
         <div id="header">
             <div id="site-logo">N</div>
             {% if user.is_authenticated %}
-                <div id="user-info">{{ user.username }} | <a href="{% url 'story' %}">submit</a> | <a href="{% url 'logout' %}">logout</a></div>
+                <div id="user-info">{{ user.username }} | <a href="{% url 'stories:story' %}">submit</a> | <a href="{% url 'logout' %}">logout</a></div>
             {% else %}
                 <div id="user-info"><a href="{% url 'login' %}">login</a></div>
             {% endif %}
