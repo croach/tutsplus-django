@@ -45,6 +45,9 @@ def story(request):
         form = StoryForm()
     return render(request, 'stories/story.html', {'form': form})
 
+def story_detail(request, story_id):
+    return HttpResponse("Story Detail View")
+
 @login_required
 def vote(request):
     story = get_object_or_404(Story, pk=request.POST.get('story'))

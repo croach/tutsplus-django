@@ -68,6 +68,18 @@ p.story-info {
     margin-top: 0;
     margin-left: 15px;
 }
+p.story-info a {
+    text-decoration: none;
+}
+p.story-info a:hover {
+    text-decoration: underline;
+}
+p.story-info a:visited {
+    color: #828282;
+}
+p.story-info a:link {
+    color: #828282;
+}
 form {
     padding: 0 0 10px 10px;
 }

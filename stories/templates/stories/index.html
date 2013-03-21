@@ -19,7 +19,16 @@
             {% endif %}
         </p>
         <p class='story-info'>
-            {{ story.points }} points by {{ story.moderator.username }} {{ story.created_at|age }}
+            {{ story.points }} points by {{ story.moderator.username }} {{ story.created_at|age }} |
+            <a href="{{story.get_absolute_url}}">
+                {% if story.comments.count > 1 %}
+                    {{ story.comments.count }} comments
+                {% elif story.comments.count > 0 %}
+                    {{ story.comments.count }} comment
+                {% else %}
+                    discuss
+                {% endif %}
+            </a>
         </p>
     </li>
 {% endfor %}
