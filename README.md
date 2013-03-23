@@ -36,4 +36,4 @@ The source code for the Tuts+ course "Django Unchained"
         % manage.py runserver
 
 
-[source]: https://github.com/croach/intermediate-django/archive/master.zip
+[source]: https://github.com/croach/tutsplus-django/archive/master.zip
